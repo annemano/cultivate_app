@@ -20,6 +20,8 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+require("trix")
+require("@rails/actiontext")
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -28,3 +30,4 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
