@@ -5,5 +5,6 @@ class Guided::EntriesController < ApplicationController
   end
 
   def create
+    redirect_to edit_entry_path(@entry)
   end
 end

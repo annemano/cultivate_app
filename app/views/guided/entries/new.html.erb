@@ -1,20 +1,14 @@
-<form action="/entries" method="POST">
-  <div id="first-question" class="d-none">
-    <label for="question-<%= @questions[0].id %>"><%= @questions[0].content %></label>
-    <br>
-    <input type="text" id="question-<%= @questions[0].id %>" name="question-<%= @questions[0].id %>">
-    <button class="btn-next">Next</button>
+<%= simple_form_for @entry do |f| %>
+  <div id="first-question">
+    <%= f.input :content, label: "#{@questions[0].content}" %>
+    <button id="next-1" class="btn-next">Next</button>
   </div>
   <div id="second-question" class="d-none">
-    <label for="question-<%= @questions[1].id %>"><%= @questions[1].content %></label>
-    <br>
-    <input type="text" id="question-<%= @questions[1].id %>" name="question-<%= @questions[1].id %>">
-    <button class="btn-next">Next</button>
+    <%= f.input :content, label: "#{@questions[1].content}" %>
+    <button id="next-2" class="btn-next">Next</button>
   </div>
-  <div id="third-question">
-    <label for="question-<%= @questions[2].id %>"><%= @questions[2].content %></label>
-    <br>
-    <input type="text" id="question-<%= @questions[2].id %>" name="question-<%= @questions[2].id %>">
-    <input type="submit" value="Create entry"></input>
+  <div id="third-question" class="d-none">
+    <%= f.input :content, label: "#{@questions[2].content}" %>
+    <%= f.button :submit %>
   </div>
-</form>
+<% end %>
