@@ -17,20 +17,6 @@ const toggleQuestionsDisplay = () => {
   }
 };
 
-// const submitGuidedEntry = () => {
-//   const firstAnswer = document.getElementById("first-q");
-//   const secondAnswer = document.getElementById("second-q");
-//   const thirdAnswer = document.getElementById("third-q");
-//   const thirdQuestion = document.getElementById("third-question");
-//   const entryContent = document.getElementById("entry_content");
-
-//   if (firstAnswer && secondAnswer && thirdAnswer) {
-//     thirdQuestion.addEventListener("blur", (event) => {
-//       entryContent.value = `${firstAnswer.value}`
-//     });
-//   }
-// }
-
 export { toggleQuestionsDisplay }
 
 
