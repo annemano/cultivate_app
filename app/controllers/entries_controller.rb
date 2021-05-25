@@ -1,9 +1,12 @@
 class EntriesController < ApplicationController
+  before_action :set_entry, only: %i[show edit update destroy]
 
   def index
+    @entries = Entry.all
   end
 
   def new
+    @entry = Entry.new
   end
 
   def create
@@ -19,6 +22,12 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def set_entry
+    @entry = Entry.find(params[:id])
   end
 
 end
