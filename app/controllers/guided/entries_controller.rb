@@ -5,6 +5,17 @@ class Guided::EntriesController < ApplicationController
   end
 
   def create
-    redirect_to edit_entry_path(@entry)
+    @guided_entry_builder = Guided::EntryBuilder.new(answers: answers_params, user: current_user)
+    if @guided_entry_builder.submit
+      redirect_to edit_entry_path(@guided_entry_builder.entry)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def answers_params
+    params.permit(guided_entry_builder: {})[:guided_entry_builder].values
   end
 end

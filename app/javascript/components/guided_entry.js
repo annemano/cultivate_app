@@ -7,15 +7,29 @@ const toggleQuestionsDisplay = () => {
 
   if (next1 || next2) {
     next1.addEventListener("click", (event) => {
-      firstQuestion.classList.add("d-none")
-      secondQuestion.classList.remove("d-none")
+      firstQuestion.classList.add("d-none");
+      secondQuestion.classList.remove("d-none");
     });
     next2.addEventListener("click", (event) => {
-      secondQuestion.classList.add("d-none")
-      thirdQuestion.classList.remove("d-none")
+      secondQuestion.classList.add("d-none");
+      thirdQuestion.classList.remove("d-none");
     });
   }
 };
+
+// const submitGuidedEntry = () => {
+//   const firstAnswer = document.getElementById("first-q");
+//   const secondAnswer = document.getElementById("second-q");
+//   const thirdAnswer = document.getElementById("third-q");
+//   const thirdQuestion = document.getElementById("third-question");
+//   const entryContent = document.getElementById("entry_content");
+
+//   if (firstAnswer && secondAnswer && thirdAnswer) {
+//     thirdQuestion.addEventListener("blur", (event) => {
+//       entryContent.value = `${firstAnswer.value}`
+//     });
+//   }
+// }
 
 export { toggleQuestionsDisplay }
 

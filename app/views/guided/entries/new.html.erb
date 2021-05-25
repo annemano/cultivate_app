@@ -1,14 +1,45 @@
-<%= simple_form_for @entry do |f| %>
+<!-- <form>
   <div id="first-question">
-    <%= f.input :content, label: "#{@questions[0].content}" %>
-    <button id="next-1" class="btn-next">Next</button>
+    <label for="first-q"> <#%= @questions[0].content %></label>
+    <input type="text" name="first-q" id="first-q">
+    <div id="next-1" class="btn btn-primary">Next</div>
   </div>
   <div id="second-question" class="d-none">
-    <%= f.input :content, label: "#{@questions[1].content}" %>
-    <button id="next-2" class="btn-next">Next</button>
+    <label for="second-q"> <#%= @questions[1].content %></label>
+    <input type="text" name="second-q" id="second-q">
+    <div id="next-2" class="btn btn-primary">Next</div>
   </div>
   <div id="third-question" class="d-none">
-    <%= f.input :content, label: "#{@questions[2].content}" %>
+    <label for="third-q"> <#%= @questions[2].content %></label>
+    <input type="text" name="third-q" id="third-q">
+    <#%= simple_form_for @entry do |f| %>
+    <#%= f.input :content, as: :hidden %>
+    <#%= f.button :submit %>
+    <#% end %>
+  </div>
+</form> -->
+
+
+<%= simple_form_for :guided_entry_builder, url: guided_entries_path do |f| %>
+  <div id="first-question">
+    <%= f.fields_for :answer_1 do |fa| %>
+      <%= fa.input :content, label: "#{@questions[0].content}" %>
+      <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[0].id } %>
+    <% end %>
+    <div id="next-1" class="btn btn-primary">Next</div>
+  </div>
+  <div id="second-question" class="d-none">
+    <%= f.fields_for :answer_2 do |fa| %>
+      <%= fa.input :content, label: "#{@questions[1].content}" %>
+      <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[1].id } %>
+    <% end %>
+    <div id="next-2" class="btn btn-primary">Next</div>
+  </div>
+  <div id="third-question" class="d-none">
+    <%= f.fields_for :answer_3 do |fa| %>
+      <%= fa.input :content, label: "#{@questions[2].content}" %>
+      <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[2].id } %>
+    <% end %>
     <%= f.button :submit %>
   </div>
 <% end %>

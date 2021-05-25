@@ -22,6 +22,7 @@ class EntriesController < ApplicationController
   end
 
   def edit
+    @entry = Entry.find(params[:id])
   end
 
   def update
