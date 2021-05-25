@@ -20,6 +20,8 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+require("trix")
+require("@rails/actiontext")
 
 // Internal imports, e.g:
 import { toggleQuestionsDisplay } from '../components/guided_entry';
@@ -28,3 +30,4 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   toggleQuestionsDisplay();
 });
+
