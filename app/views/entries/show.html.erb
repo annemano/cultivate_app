@@ -1,0 +1,11 @@
+<h1><%= @entry.title %></h1>
+<p><%= current_user %></p>
+<h3>Updated at:</h3>
+<p><%= @entry.updated_at %></p>
+<h3>Content:</h3>
+<p><%= @entry.content %></p>
+<%= link_to 'Edit entry', edit_entry_path(@entry) %>
+<br>
+<%= link_to 'Go back to entries', entries_path %>
+<br>
+<%= link_to 'Go back to home page', root_path  %>
