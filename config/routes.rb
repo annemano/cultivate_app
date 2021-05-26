@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :entries
+
+  namespace :guided do
+   resources :entries, only: [:new, :create] # GET /guided/entries/new && POST /guided/entries
+  end
 end

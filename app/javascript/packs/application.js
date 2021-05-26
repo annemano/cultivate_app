@@ -24,10 +24,10 @@ require("trix")
 require("@rails/actiontext")
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { toggleQuestionsDisplay } from '../components/guided_entry';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  toggleQuestionsDisplay();
 });
 

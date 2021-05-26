@@ -1,0 +1,23 @@
+<%= simple_form_for :guided_entry_builder, url: guided_entries_path do |f| %>
+  <div id="first-question">
+    <%= f.fields_for :answer_1 do |fa| %>
+      <%= fa.input :content, label: "#{@questions[0].content}" %>
+      <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[0].id } %>
+    <% end %>
+    <div id="next-1" class="btn btn-primary">Next</div>
+  </div>
+  <div id="second-question" class="d-none">
+    <%= f.fields_for :answer_2 do |fa| %>
+      <%= fa.input :content, label: "#{@questions[1].content}" %>
+      <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[1].id } %>
+    <% end %>
+    <div id="next-2" class="btn btn-primary">Next</div>
+  </div>
+  <div id="third-question" class="d-none">
+    <%= f.fields_for :answer_3 do |fa| %>
+      <%= fa.input :content, label: "#{@questions[2].content}" %>
+      <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[2].id } %>
+    <% end %>
+    <%= f.button :submit %>
+  </div>
+<% end %>
