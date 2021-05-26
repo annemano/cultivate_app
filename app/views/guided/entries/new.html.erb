@@ -5,6 +5,9 @@
       <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[0].id } %>
     <% end %>
     <div id="next-1" class="btn btn-primary">Next</div>
+    <i class="fas fa-circle"></i>
+    <i class="far fa-circle"></i>
+    <i class="far fa-circle"></i>
   </div>
   <div id="second-question" class="d-none">
     <%= f.fields_for :answer_2 do |fa| %>
@@ -12,13 +15,19 @@
       <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[1].id } %>
     <% end %>
     <div id="next-2" class="btn btn-primary">Next</div>
+    <i class="far fa-circle"></i>
+    <i class="fas fa-circle"></i>
+    <i class="far fa-circle"></i>
   </div>
   <div id="third-question" class="d-none">
     <%= f.fields_for :answer_3 do |fa| %>
       <%= fa.input :content, label: "#{@questions[2].content}" %>
       <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[2].id } %>
     <% end %>
-    <%= f.button :submit %>
+    <%= f.button :submit, "Next", class: "btn btn-primary" %>
+    <i class="far fa-circle"></i>
+    <i class="far fa-circle"></i>
+    <i class="fas fa-circle"></i>
   </div>
 <% end %>
 <%= link_to 'Go back to home page', root_path  %>
