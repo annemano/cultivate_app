@@ -1,7 +1,8 @@
 class EntriesController < ApplicationController
-
+  before_action :set_entry, only: %i[show edit update destroy]
 
   def index
+    @entries = Entry.where(user: current_user)
   end
 
   def new
@@ -12,7 +13,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
     @entry.user = current_user
     if @entry.save
-      redirect_to root_path
+      redirect_to entry_path(@entry)
     else
       render :new
     end
@@ -22,18 +23,25 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
   end
 
   def update
+    if @entry.update(entry_params)
+      redirect_to entry_path(@entry)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @entry.destroy
+    redirect_to entries_path
   end
 
   private
 
   def set_entry
+    @entry = Entry.find(params[:id])
   end
 
   def entry_params
