@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   namespace :guided do
    resources :entries, only: [:new, :create] # GET /guided/entries/new && POST /guided/entries
   end
+
+  resources :youtube, only: :show
 end

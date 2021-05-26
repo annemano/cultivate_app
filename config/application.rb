@@ -17,7 +17,9 @@ module CultivateApp
     config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
-    #
+    config.to_prepare do
+      ActionText::ContentHelper.allowed_tags << "iframe"
+    end
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
