@@ -27,7 +27,7 @@ class EntriesController < ApplicationController
 
   def update
     if @entry.update(entry_params)
-      render :show
+      redirect_to entry_path(@entry)
     else
       render :edit
     end
