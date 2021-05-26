@@ -2,13 +2,14 @@
 
 <% @entries.each do |entry| %>
   <hr>
-  <%= current_user %>
-  <%= entry.updated_at %>
-  <%= entry.title %>
-  <%= entry.content %>
-  <%= link_to 'Show entry', entry_path(entry) %>
+  <%= link_to entry_path(entry) do %>
+    <%= current_user %>
+    <%= entry.updated_at %>
+    <%= entry.title %>
+    <%= entry.content %>
+    <%= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
   <br>
-  <%= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
   <hr>
 <% end %>
 <%= link_to 'Go back to home page', root_path  %>
