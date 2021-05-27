@@ -1,4 +1,39 @@
-<h1>CULTIVATE Home page</h1>
+<div class="container">
+
+  <!-- Greeting -->
+  <h1>Hello, Jenny.</h1>
+  <br>
+  <p>How are you feeling today?</p>
+  <br>
+
+  <!-- Emojis -->
+  <div class="table">
+    <tr>
+      <td><i class="fas fa-meh emoji"></i></td>
+      <td><i class="fas fa-smile emoji"></i></td>
+      <td><i class="fas fa-angry emoji"></i></td>
+    </tr>
+    <br>
+    <tr>
+      <td><i class="fas fa-frown emoji"></i></td>
+      <td><i class="fas fa-sad-tear emoji"></i></td>
+      <td><i class="fas fa-tired emoji"></i></td>
+    </tr>
+  </div>
+
+  <br>
+  <br>
+
+<p><%= link_to 'Confirm', new_entry_path, class: 'button-lg' %> </p>
+
+<!--
+  <p><%= link_to 'Create a new entry', new_entry_path, class: 'button-lg' %></p>
+  <br>
+  <p><%= link_to 'Create a guided entry', new_guided_entry_path, class: 'button-lg'  %></p>
+  <br>
+  <p><%= link_to 'See all my entries', entries_path, class: 'button-lg' %></p>
+  <br> -->
+</div>
 
 <%= link_to 'Create a new entry', new_entry_path %>
 <br>
@@ -7,3 +42,4 @@
 <%= link_to 'See all my entries', entries_path %>
 <br>
 <%= link_to 'See my communities', communities_path %>
+

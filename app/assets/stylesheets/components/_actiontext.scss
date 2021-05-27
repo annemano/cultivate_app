@@ -1,0 +1,88 @@
+//
+// Provides a drop-in pointer for the default Trix stylesheet that will format the toolbar and
+// the trix-editor content (whether displayed or under editing). Feel free to incorporate this
+// inclusion directly in any other asset bundle and remove this file.
+//
+@import "trix/dist/trix";
+
+// We need to override trix.css’s image gallery styles to accommodate the
+// <action-text-attachment> element we wrap around attachments. Otherwise,
+// images in galleries will be squished by the max-width: 33%; rule.
+.trix-content {
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
+
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  action-text-attachment {
+    .attachment {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+trix-editor.form-control {
+  min-height: 200px;
+  height: auto;
+}
+
+.trix-button-group--history-tools, .trix-button--icon-italic, .trix-button--icon-strike,
+.trix-button--icon-quote, .trix-button--icon-code, .trix-button--icon-decrease-nesting-level,
+.trix-button--icon-increase-nesting-level{
+  display: none !important;
+}
+
+.trix-button--icon-link::before {
+  background-image: url('https://res.cloudinary.com/dsqxc7oqa/image/upload/v1622079575/youtube-brands_hwdyv6.svg') !important;
+}
+
+.trix-button--icon-attach::before {
+  background-image: url('https://res.cloudinary.com/dsqxc7oqa/image/upload/v1622079673/camera-solid_r7xweb.svg') !important;
+  padding: 4px !important;
+}
+
+.trix-button-group--text-tools {
+  width: 33% !important;
+  border: none !important;
+  justify-content: space-around;
+}
+
+.trix-button-group--file-tools {
+  width: 17% !important;
+  border: none !important;
+  justify-content: center !important;
+}
+
+.trix-button-group--block-tools {
+  width: 50% !important;
+  border: none !important;
+  justify-content: space-around;
+}
+
+.trix-button-row {
+  margin: 8px 16px !important;
+}
+
+.trix-button--icon-bold, .trix-button--icon-heading-1, .trix-button--icon-bullet-list,
+.trix-button--icon-link, .trix-button--icon-attach, .trix-button--icon-number-list {
+  border: none !important;
+  border-radius: 5px !important;
+  width: 32px !important;
+  height: 32px !important;
+  flex-grow: 1 !important;
+  padding: 16px !important;
+}
