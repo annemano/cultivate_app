@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :youtube, only: :show
+
+  resources :communities, only: :show do
+    resources :messages, only: :create
+  end
 end
