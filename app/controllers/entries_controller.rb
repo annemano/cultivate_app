@@ -41,7 +41,7 @@ class EntriesController < ApplicationController
 
   def set_mood
     session[:mood] = params[:mood]
-    redirect_to new_entry_path
+    redirect_to menu_path
   end
 
   private
