@@ -1,0 +1,33 @@
+.entry_mood {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  > .col-form-label {
+    display: none;
+  }
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+}
+
+.tag-selector:checked + label {
+  // background-color: $dark-green;
+  .emoji {
+    color: $dark-green;
+  }
+}
+
+.emoji {
+  font-size: 60px;
+  color: $light-gray;
+  padding: 8px 8px;
+  // &:active {
+  //   color: $dark-green;
+  // }
+}
+

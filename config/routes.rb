@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :youtube, only: :show
+
+  get "/menu", to: 'pages#menu', as: 'menu'
+  post "/menu/mood", to: 'pages#set_mood'
 end

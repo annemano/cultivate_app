@@ -12,6 +12,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.user = current_user
+    @entry.mood = session[:mood] || nil
     if @entry.save
       redirect_to entry_path(@entry)
     else
