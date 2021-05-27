@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    @user = current_user
+    @entry = Entry.new
   end
 
   def menu
@@ -9,7 +11,7 @@ class PagesController < ApplicationController
   end
 
   def set_mood
-    session[:mood] = params[:mood]
+    session[:mood] = params[:entry][:mood]
     redirect_to menu_path
   end
 end
