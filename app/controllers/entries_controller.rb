@@ -12,6 +12,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.user = current_user
+    @entry.mood = session[:mood] || nil
     if @entry.save
       redirect_to entry_path(@entry)
     else
@@ -36,6 +37,11 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     redirect_to entries_path
+  end
+
+  def set_mood
+    session[:mood] = params[:mood]
+    redirect_to new_entry_path
   end
 
   private
