@@ -15,7 +15,9 @@ class CommunitiesController < ApplicationController
 
   def create
     @community = Community.new(community_params)
-    @community.user = current_user
+    @community_member = @community.community_members.build(user: current_user, owner: true)
+    @community_member.community = @community
+    @community_member.save
     if @community.save
       redirect_to community_path(@community)
     else

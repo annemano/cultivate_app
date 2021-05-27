@@ -1,3 +1,5 @@
+questions.destroy_all
+
 questions = ["What was the best part of the day?",
 "When did I feel grateful today?",
 "What made me smile today",
@@ -54,8 +56,9 @@ questions = ["What was the best part of the day?",
 "What made me feel energized today?",
 "What made me happy to be alive today?"]
 
-
 questions.each do |question|
   Question.create!(
   content: question )
 end
+
+user1 = User.create(email: "a@a.")
