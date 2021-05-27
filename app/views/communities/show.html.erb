@@ -7,5 +7,6 @@
 <%= simple_form_for [ @community, @message ], remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Message ##{@community.name}" %>
 <% end %>
+<%= link_to 'Go back', communities_path  %>
 
 
