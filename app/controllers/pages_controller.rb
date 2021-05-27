@@ -14,4 +14,7 @@ class PagesController < ApplicationController
     session[:mood] = params[:entry][:mood]
     redirect_to menu_path
   end
+
+  def doodle
+  end
 end

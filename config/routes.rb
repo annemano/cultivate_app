@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   get "/menu", to: 'pages#menu', as: 'menu'
   post "/menu/mood", to: 'pages#set_mood'
+
+  get "/doodle", to: 'pages#doodle'
 end
