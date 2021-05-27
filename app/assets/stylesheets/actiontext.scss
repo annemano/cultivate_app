@@ -38,3 +38,42 @@
 trix-editor.form-control {
   height: auto;
 }
+
+.trix-button-group--block-tools, .trix-button-group--history-tools {
+  display: none !important;
+}
+
+.trix-button--icon-link::before {
+  background-image: url('https://res.cloudinary.com/dsqxc7oqa/image/upload/v1622079575/youtube-brands_hwdyv6.svg') !important;
+}
+
+.trix-button--icon-attach::before {
+  background-image: url('https://res.cloudinary.com/dsqxc7oqa/image/upload/v1622079673/camera-solid_r7xweb.svg') !important;
+  padding: 4px !important;
+}
+
+.trix-button-group--text-tools {
+  width: 75% !important;
+  border: none !important;
+  justify-content: space-between;
+}
+
+.trix-button-group--file-tools {
+  width: 25% !important;
+  border: none !important;
+  justify-content: flex-end !important;
+}
+
+.trix-button-row {
+  margin: 8px 16px !important;
+}
+
+.trix-button--icon-bold, .trix-button--icon-italic, .trix-button--icon-strike,
+.trix-button--icon-link, .trix-button--icon-attach {
+  border: none !important;
+  border-radius: 5px !important;
+  width: 32px !important;
+  height: 32px !important;
+  flex-grow: 1 !important;
+  padding: 16px !important;
+}
