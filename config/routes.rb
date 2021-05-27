@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :youtube, only: :show
 
   get "/menu", to: 'pages#menu', as: 'menu'
-  post "/entries/mood", to: 'entries#set_mood'
+  post "/menu/mood", to: 'pages#set_mood'
 end
