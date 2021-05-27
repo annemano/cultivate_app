@@ -5,7 +5,7 @@ class Guided::EntriesController < ApplicationController
   end
 
   def create
-    @guided_entry_builder = Guided::EntryBuilder.new(answers: answers_params, user: current_user)
+    @guided_entry_builder = Guided::EntryBuilder.new(answers: answers_params, user: current_user, mood: session[:mood] || nil)
     if @guided_entry_builder.submit
       redirect_to edit_entry_path(@guided_entry_builder.entry)
     else

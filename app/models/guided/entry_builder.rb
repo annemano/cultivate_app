@@ -1,14 +1,15 @@
 module Guided
   class EntryBuilder
-    attr_reader :answers, :user, :entry
+    attr_reader :answers, :user, :entry, :mood
 
     def initialize(params = {})
       @answers = params[:answers] || []
       @user = params[:user]
+      @mood = params[:mood]
     end
 
     def submit
-      @entry = Entry.create(content: entry_content, user: user, mood: session[:mood] || nil)
+      @entry = Entry.create(content: entry_content, user: user, mood: mood)
     end
 
     private
