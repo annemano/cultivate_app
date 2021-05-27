@@ -16,18 +16,8 @@
 }
 
 .tag-selector:checked + label {
-  // background-color: $dark-green;
   .emoji {
     color: $dark-green;
   }
-}
-
-.emoji {
-  font-size: 60px;
-  color: $light-gray;
-  padding: 8px 8px;
-  // &:active {
-  //   color: $dark-green;
-  // }
 }
 
