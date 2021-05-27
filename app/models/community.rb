@@ -1,4 +1,4 @@
 class Community < ApplicationRecord
-  belongs_to :user
-  has_many :messages
+  has_many :messages, dependent: :destroy
+  has_many :community_users, dependent: :destroy
 end
