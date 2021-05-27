@@ -36,10 +36,13 @@
 }
 
 trix-editor.form-control {
+  min-height: 200px;
   height: auto;
 }
 
-.trix-button-group--block-tools, .trix-button-group--history-tools {
+.trix-button-group--history-tools, .trix-button--icon-italic, .trix-button--icon-strike,
+.trix-button--icon-quote, .trix-button--icon-code, .trix-button--icon-decrease-nesting-level,
+.trix-button--icon-increase-nesting-level{
   display: none !important;
 }
 
@@ -53,23 +56,29 @@ trix-editor.form-control {
 }
 
 .trix-button-group--text-tools {
-  width: 75% !important;
+  width: 33% !important;
   border: none !important;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .trix-button-group--file-tools {
-  width: 25% !important;
+  width: 17% !important;
   border: none !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
+}
+
+.trix-button-group--block-tools {
+  width: 50% !important;
+  border: none !important;
+  justify-content: space-around;
 }
 
 .trix-button-row {
   margin: 8px 16px !important;
 }
 
-.trix-button--icon-bold, .trix-button--icon-italic, .trix-button--icon-strike,
-.trix-button--icon-link, .trix-button--icon-attach {
+.trix-button--icon-bold, .trix-button--icon-heading-1, .trix-button--icon-bullet-list,
+.trix-button--icon-link, .trix-button--icon-attach, .trix-button--icon-number-list {
   border: none !important;
   border-radius: 5px !important;
   width: 32px !important;
