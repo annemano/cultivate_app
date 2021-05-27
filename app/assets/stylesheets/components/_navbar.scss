@@ -1,16 +1,19 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.navbar-cultivate {
+  // justify-content: space-between;
   background: transparent;
-  padding-left: 20px;
+  // padding-left: 20px;
   text-align: center;
   margin-right: 0;
+  i {
+    font-size: 24px; // icons on navbar
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-cultivate .navbar-collapse {
+  // flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand {
+.navbar-cultivate .navbar-brand {
   letter-spacing: 4px;
   color: $light-gray;
   &:hover {
@@ -20,4 +23,16 @@
 
 .navbar-brand {
   margin-right: 0;
+  padding: 4px 4px;
+
 }
+
+.navbar-nav.no-static .dropdown-menu {
+  position: absolute;
+}
+
+#navbarSupportedContent.navbar {
+  padding: 4px 4px;
+}
+
+
