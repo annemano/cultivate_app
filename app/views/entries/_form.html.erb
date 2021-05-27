@@ -1,4 +1,4 @@
 <%= simple_form_for(entry) do |f| %>
-  <%= f.input :content, as: :rich_text_area %>
+  <%= f.input :content, as: :rich_text_area, placeholder: "Take a few deep breaths and consider the positive things that are happening today.", label: false %>
   <%= f.button :submit %>
 <% end %>
