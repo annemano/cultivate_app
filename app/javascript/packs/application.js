@@ -25,12 +25,17 @@ require("@rails/actiontext")
 
 // Internal imports, e.g:
 import { toggleQuestionsDisplay } from '../components/guided_entry';
+
+import { initCommunityCable } from '../channels/community_channel';
 import { initTrix } from '../components/init_trix'
+import { initDoodle } from '../components/doodle'
 
 initTrix();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   toggleQuestionsDisplay();
+  initCommunityCable();
+  initDoodle();
 });
 
