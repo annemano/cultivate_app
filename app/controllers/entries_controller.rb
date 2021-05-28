@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: %i[show edit update destroy]
 
   def index
-    @entries = Entry.where(user: current_user)
+    @entries = Entry.where(user: current_user).sort_by &:created_at
   end
 
   def new
@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
 
   def update
     if @entry.update(entry_params)
-      redirect_to entry_path(@entry)
+      redirect_to entries_path
     else
       render :edit
     end
