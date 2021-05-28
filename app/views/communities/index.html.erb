@@ -1,0 +1,17 @@
+<h1>My Communities</h1>
+
+<% @communities.each do |community| %>
+  <hr>
+  <%= link_to community_path(community) do %>
+    <%= community.name %>
+    <br>
+    <%= link_to 'Edit community', edit_community_path(community) %>
+    <br>
+    <%= link_to 'Delete community', community_path(community), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <br>
+  <hr>
+<% end %>
+<%= link_to 'Go back to home page', root_path  %>
+<br>
+<%= link_to 'Create a new community', new_community_path %>

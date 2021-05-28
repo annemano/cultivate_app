@@ -5,6 +5,9 @@
   padding: 16px 16px;
   margin: 0 auto;
   text-align: left;
-  color: $dark-gray;
+  text-decoration: none;
   border-radius: 8px;
+    a {
+      color: $dark-gray !important;
+    }
 }

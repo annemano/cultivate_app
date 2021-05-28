@@ -2,7 +2,6 @@
 
 <% @entries.each do |entry| %>
   <div class="card_entry">
-    <hr>
     <%= link_to entry_path(entry) do %>
       <%#= current_user %>
       <h4><%= entry.updated_at %></h4>
@@ -10,7 +9,6 @@
       <%= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
     <br>
-    <hr>
   </div>
 <% end %>
 <%= link_to 'Go back to home page', root_path  %>
