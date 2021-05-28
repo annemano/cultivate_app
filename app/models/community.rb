@@ -6,15 +6,10 @@ class Community < ApplicationRecord
   has_one :owner_member, -> { where(owner: true) }, class_name: "CommunityMember"
   has_one :owner, class_name: "User", through: :owner_member, source: :user
 
-  # validates :name, :owner, presence: true
+  validates :name, presence: true
+  validates :name, uniqueness: true
 
   # def owner
   #   community_members.find_by(owner: true).user
-  # end
-
-  # def save_community_members
-  #   community_members.user = current_user
-  #   community_members.community = self
-  #   community_members.save
   # end
 end
