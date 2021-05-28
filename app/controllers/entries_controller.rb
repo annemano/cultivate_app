@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: %i[show edit update destroy]
 
   def index
-    @entries = Entry.where(user: current_user)
+    @entries = Entry.where(user: current_user).sort_by &:created_at
   end
 
   def new
