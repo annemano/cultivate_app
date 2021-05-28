@@ -1,14 +1,17 @@
 <h1>My Entries</h1>
-
-<% @entries.each do |entry| %>
-  <div class="card_entry">
-    <%= link_to entry_path(entry) do %>
-      <%#= current_user %>
-      <h4><%= entry.updated_at %></h4>
-      <p><%= entry.content %></p>
-      <%= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
-    <% end %>
-    <br>
-  </div>
-<% end %>
-<%= link_to 'Go back to home page', root_path  %>
+  <% @entries.each do |entry| %>
+    <div class="card_entry">
+      <%= link_to entry_path(entry) do %>
+        <%#= current_user %>
+        <h4><%= entry.updated_at.month %>-<%= entry.updated_at.day %>-<%= entry.updated_at.year %></h4>
+        <hr>
+        <small><%= entry.content %></small>
+        <%#= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to entry_path(entry), method: :delete, data: { confirm: "Delete post? Are you sure?" }  do %>
+            <small><i class="fas fa-minus-circle"></i></small>
+          <% end %>
+      <% end %>
+      <br>
+    </div>
+  <% end %>
+  <%= link_to 'Go back to home page', root_path  %>
