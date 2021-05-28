@@ -54,7 +54,6 @@ questions = ["What was the best part of the day?",
 "What made me feel energized today?",
 "What made me happy to be alive today?"]
 
-
 questions.each do |question|
   Question.create!(
   content: question )
