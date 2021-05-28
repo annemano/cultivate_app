@@ -37,7 +37,6 @@ questions = ["What was the best part of the day?",
 "What negative was I able to turn into a positive today?",
 "What’s the silver lining to something that went wrong today?",
 "What made me feel hopeful today?",
-"How did I show gumption today?",
 "How was I awesome today?",
 "What positive habits did I engage in today?",
 "What negative habits was I able to avoid today?",
@@ -54,7 +53,24 @@ questions = ["What was the best part of the day?",
 "What made me feel energized today?",
 "What made me happy to be alive today?"]
 
+# Destroy everything existing
+Question.destroy_all
+User.destroy_all
+Entry.destroy_all
+
+#Create questions
 questions.each do |question|
   Question.create!(
   content: question )
+end
+
+#Create User
+user = User.new(email: "m@m.com", password: "123456", first_name: "Michael")
+user.save!
+
+#Create 9 entries
+9.times do
+  Entry.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    user: user,
+    mood: rand(1..6))
 end
