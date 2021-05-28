@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
     @entry.user = current_user
     @entry.mood = session[:mood] || nil
     if @entry.save
-      redirect_to entry_path(@entry)
+      redirect_to entries_path
     else
       render :new
     end
