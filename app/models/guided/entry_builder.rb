@@ -1,17 +1,19 @@
 module Guided
- class EntryBuilder
-    attr_reader :answers, :user, :entry
+  class EntryBuilder
+    attr_reader :answers, :user, :entry, :mood
 
     def initialize(params = {})
       @answers = params[:answers] || []
       @user = params[:user]
+      @mood = params[:mood]
     end
 
     def submit
-      @entry = Entry.create(content: entry_content, user: user)
+      @entry = Entry.create(content: entry_content, user: user, mood: mood)
     end
 
     private
+
     def entry_content
       concatenated_answers.join("<br><br>")
     end
@@ -23,4 +25,3 @@ module Guided
     end
   end
 end
-

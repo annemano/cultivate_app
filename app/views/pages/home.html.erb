@@ -1,38 +1,23 @@
 <div class="container">
 
   <!-- Greeting -->
-  <h1>Hello, Jenny.</h1>
-  <br>
-  <p>How are you feeling today?</p>
-  <br>
+  <h1 class="my-5">Hello, Jenny.</h1>
+  <h5 class="my-3">How are you feeling today?</h5>
 
   <!-- Emojis -->
-  <div class="table">
-    <tr>
-      <td><i class="fas fa-meh emoji"></i></td>
-      <td><i class="fas fa-smile emoji"></i></td>
-      <td><i class="fas fa-angry emoji"></i></td>
-    </tr>
-    <br>
-    <tr>
-      <td><i class="fas fa-frown emoji"></i></td>
-      <td><i class="fas fa-sad-tear emoji"></i></td>
-      <td><i class="fas fa-tired emoji"></i></td>
-    </tr>
-  </div>
 
-  <br>
-  <br>
+    <%= simple_form_for @entry, url: menu_mood_path do |f| %>
+      <%= f.input :mood, as: :radio_buttons,
+      collection: [[1, '<i class="fas fa-meh emoji"></i>'.html_safe],
+      [2, '<i class="fas fa-smile emoji"></i>'.html_safe], [3, '<i class="fas fa-angry emoji"></i>'.html_safe],
+      [4, '<i class="fas fa-frown emoji"></i>'.html_safe], [5, '<i class="fas fa-sad-tear emoji"></i>'.html_safe],
+      [6, '<i class="fas fa-tired emoji"></i>'.html_safe]], label_method: :second, value_method: :first, input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+      <%= f.button :submit, "Confirm", class: "button-lg my-5" %>
+    <% end %>
 
-<p><%= link_to 'Confirm', new_entry_path, class: 'button-lg' %> </p>
 
-<!--
-  <p><%= link_to 'Create a new entry', new_entry_path, class: 'button-lg' %></p>
-  <br>
-  <p><%= link_to 'Create a guided entry', new_guided_entry_path, class: 'button-lg'  %></p>
-  <br>
-  <p><%= link_to 'See all my entries', entries_path, class: 'button-lg' %></p>
-  <br> -->
+
 </div>
 
 <%= link_to 'Create a new entry', new_entry_path %>
