@@ -7,7 +7,7 @@
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[0].id } %>
         <% end %>
         <br>
-        <div id="back-1" class="btn button-sm">Back</div>
+        <%= link_to "Back", menu_path, class: "btn button-sm"  %>
         <div id="next-1" class="btn button-sm">Next</div>
         <br>
         <br>
