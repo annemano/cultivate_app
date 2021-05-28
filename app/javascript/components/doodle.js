@@ -6,7 +6,7 @@ const initDoodle = () => {
   let width = document.getElementById("width-canvas");
   if (canvas) {
     canvas.width = window.innerWidth - 60;
-    canvas.height = window.innerHeight * 0.75;
+    canvas.height = window.innerHeight * 0.72;
     let context = canvas.getContext("2d");
     context.fillStyle = "white";
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -80,6 +80,16 @@ const initDoodle = () => {
     canvas.addEventListener("mousemove", draw, false);
     canvas.addEventListener("mouseup", stop, false);
     canvas.addEventListener("mouseout", stop, false);
+
+    let save = document.getElementById('save-doodle');
+    save.addEventListener("click", () => {
+      downloadCanvas(save);
+    })
+
+    async function downloadCanvas(el) {
+      const imageURI = canvas.toDataURL("image/jpg");
+      el.href = imageURI;
+    };
 
     restore.addEventListener("click", () => {
       if (start_index <= 0) {
