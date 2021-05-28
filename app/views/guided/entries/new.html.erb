@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container my-5">
   <div class="card_guided_entry">
     <%= simple_form_for :guided_entry_builder, url: guided_entries_path do |f| %>
       <div id="first-question">
         <%= f.fields_for :answer_1 do |fa| %>
-
-          <h5><%= fa.input :content, label: "#{@questions[0].content}" %></h5>
+          <h5><%= fa.input :content, label: "#{@questions[0].content}", as: :text, input_html: {rows: 5} %></h5>
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[0].id } %>
         <% end %>
         <br>
+        <div id="back-1" class="btn button-sm">Back</div>
         <div id="next-1" class="btn button-sm">Next</div>
         <br>
         <br>
@@ -17,10 +17,11 @@
       </div>
       <div id="second-question" class="d-none">
         <%= f.fields_for :answer_2 do |fa| %>
-          <h5><%= fa.input :content, label: "#{@questions[1].content}" %></h5>
+          <h5><%= fa.input :content, label: "#{@questions[1].content}", as: :text, input_html: {rows: 5} %></h5>
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[1].id } %>
         <% end %>
         <br>
+        <div id="back-2" class="btn button-sm">Back</div>
         <div id="next-2" class="btn button-sm">Next</div>
         <br>
         <br>
@@ -30,10 +31,11 @@
       </div>
       <div id="third-question" class="d-none">
         <%= f.fields_for :answer_3 do |fa| %>
-          <h5><%= fa.input :content, label: "#{@questions[2].content}" %></h5>
+          <h5><%= fa.input :content, label: "#{@questions[2].content}", as: :text, input_html: {rows: 5} %></h5>
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[2].id } %>
         <% end %>
         <br>
+        <div id="back-3" class="btn button-sm">Back</div>
         <%= f.button :submit, "Next", class: "btn button-sm" %>
         <br>
         <br>
