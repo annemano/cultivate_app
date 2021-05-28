@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :communities
   resources :communities, only: :show do
     resources :messages, only: :create
+  end
 
   get "/menu", to: 'pages#menu', as: 'menu'
   post "/menu/mood", to: 'pages#set_mood'
