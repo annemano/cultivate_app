@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   before_action :set_community, only: %i[show edit update destroy]
 
   def index
-    @communities = CommunityMember.where(user: current_user).map { |f| f.community }
+    @communities = current_user.communities
   end
 
   def show
@@ -15,9 +15,8 @@ class CommunitiesController < ApplicationController
 
   def create
     @community = Community.new(community_params)
-    @community_member = @community.community_members.build(user: current_user, owner: true)
+    @community.community_members.build(user: current_user, owner: true)
     if @community.save
-      @community_member.community = @community
       redirect_to community_path(@community)
     else
       render :new
