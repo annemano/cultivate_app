@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   before_action :set_community, only: %i[show edit update destroy]
 
   def index
-    @communities = Community.all
+    @communities = CommunityMember.where(user: current_user).map { |f| f.community }
   end
 
   def show
