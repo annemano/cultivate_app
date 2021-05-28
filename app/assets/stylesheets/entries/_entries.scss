@@ -1,0 +1,22 @@
+body {
+  background-color: $light-green;
+  color: $dark-gray;
+  h1, h2, h3, h4, h5, p {
+    color: $dark-gray !important;
+    margin-bottom: 0;
+  }
+  a {
+    text-align: left;
+    padding: 8px 8px !important;
+    color: $dark-gray !important;
+  }
+}
+
+.overlay {
+  // display: none;
+}
+
+.navbar {
+  color: $dark-gray;
+}
+
