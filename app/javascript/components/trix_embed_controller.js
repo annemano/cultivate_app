@@ -32,6 +32,7 @@ class TrixEmbedController {
     let value = event.target.value.trim()
     let matches1 = value.match(this.pattern1)
     let matches2 = value.match(this.pattern2)
+    let spotmatches = value.match(this.spotpattern)
     if (matches1 != null) {
       this.fetch(matches1[2])
     } else if (matches2 != null) {
