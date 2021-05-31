@@ -3,9 +3,9 @@ import "trix/dist/trix.css"
 const embedBtnSnippet = (element) => {
   return `
   <div data-behavior="embed_container">
-    <div class="d-flex align-items-center mt-2 link_to_embed link_to_embed--new">
+    <div class="d-flex justify-content-center align-items-center mt-2 link_to_embed link_to_embed--new">
       Would you like to embed media from this site?
-      <input type="button" class="btn-sm border border-dark rounded btn-muted ml-1" data-behavior="embed_url" value="OK, embed it!">
+      <input type="button" class="btn-sm border border-dark rounded btn-muted ml-3" data-behavior="embed_url" value="Embed!">
     </div>
   </div>
   `;

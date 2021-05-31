@@ -91,3 +91,7 @@ trix-editor.form-control {
 .link_to_embed {
   color: $dark-gray;
 }
+
+trix-toolbar .trix-input--dialog {
+  margin: 0 !important;
+}
