@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   get "/doodle", to: 'pages#doodle'
 
+  get "/entries/:id/:community_id/share", to: 'entries#share', as: 'entry_share'
+
 end

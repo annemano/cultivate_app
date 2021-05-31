@@ -21,12 +21,21 @@
         </div>
         <hr>
         <small><%= entry.content %></small>
-        <%#= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
-          <%= link_to entry_path(entry), method: :delete, data: { confirm: "Delete post? Are you sure?" }  do %>
-            <small><i class="fas fa-minus-circle"></i></small>
-          <% end %>
       <% end %>
-      <br>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="entry-<%= entry.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Share
+        </button>
+        <div class="dropdown-menu" aria-labelledby="entry-<%= entry.id %>">
+          <% current_user.communities.each do |community| %>
+            <%= link_to community.name, entry_share_path(entry, community), class: "dropdown-item" %>
+          <% end %>
+        </div>
+      </div>
+        <%#= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to entry_path(entry), method: :delete, data: { confirm: "Delete post? Are you sure?" }  do %>
+          <small><i class="fas fa-minus-circle"></i></small>
+        <% end %>
     </div>
   <% end %>
   <%= link_to 'Go back to home page', root_path  %>
