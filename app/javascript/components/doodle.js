@@ -5,8 +5,8 @@ const initDoodle = () => {
   let colors = document.getElementById("colors-canvas");
   let width = document.getElementById("width-canvas");
   if (canvas) {
-    canvas.width = window.innerWidth - 60;
-    canvas.height = window.innerHeight * 0.72;
+    canvas.width = window.innerWidth - 40;
+    canvas.height = window.innerHeight * 0.65;
     let context = canvas.getContext("2d");
     context.fillStyle = "white";
     context.fillRect(0, 0, canvas.width, canvas.height);

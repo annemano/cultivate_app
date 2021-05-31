@@ -47,4 +47,12 @@
   </div>
 </div>
 <br>
-<%= link_to 'Go back to home page', root_path  %>
+<%#= link_to 'Home', root_path, class: 'button-sm'  %>
+
+<!-- cancel icon-->
+
+<%= link_to root_path, class: 'cancel' do %>
+  <i class="far fa-times-circle"></i>
+<% end %>
+
+

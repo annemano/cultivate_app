@@ -1,9 +1,16 @@
 <div class="container">
-  <!--Navigate your path-->
+
+  <!-- Back button -->
+<!--   <div class="back_button">
+    <%= link_to root_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div> -->
+
   <div class="menu_container">
-  <%= link_to "Guide Me", new_guided_entry_path, class: 'button-lg' %>
-  <%= link_to "Write", new_entry_path, class: 'button-lg' %>
-  <%= link_to "Communities", communities_path, class: 'button-lg' %>
-  <%= link_to "Doodle", doodle_path, class: 'button-lg' %>
+    <%= link_to "Guide Me", new_guided_entry_path, class: 'button-lg' %>
+    <%= link_to "Write", new_entry_path, class: 'button-lg' %>
+    <%= link_to "Communities", communities_path, class: 'button-lg' %>
+    <%= link_to "Doodle", doodle_path, class: 'button-lg' %>
   </div>
 </div>
