@@ -3,7 +3,8 @@ class Community < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   has_many :community_members, dependent: :destroy
-  has_many :users, through: :community_members
+  has_many :users, through: :community_members, inverse_of: :user
+  accepts_nested_attributes_for :users, reject_if: :all_blank, allow_destroy: true
   has_one :owner_member, -> { where(owner: true) }, class_name: "CommunityMember"
   has_one :owner, class_name: "User", through: :owner_member, source: :user
 
