@@ -3,6 +3,7 @@ class CommunitiesController < ApplicationController
 
   def index
     @communities = current_user.communities
+    @requests = current_user.community_requests
   end
 
   def show

@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   get "/doodle", to: 'pages#doodle'
 
+  get "/community_requests", to: 'community_requests#decide', as: :decide
 end

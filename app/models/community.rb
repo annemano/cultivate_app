@@ -1,8 +1,8 @@
 class Community < ApplicationRecord
   # before_create :save_community_members
   has_many :community_members, dependent: :destroy
-
   has_many :users, through: :community_members
+
   has_many :messages, dependent: :destroy
 
   has_many :community_requests, dependent: :destroy
