@@ -46,6 +46,6 @@ class CommunitiesController < ApplicationController
   end
 
   def community_params
-    params.require(:community).permit(:name, users_attributes: %i[id nickname _destroy])
+    params.require(:community).permit(:name, community_members_attributes: %i[id user_id _destroy])
   end
 end
