@@ -11,6 +11,7 @@ class CommunitiesController < ApplicationController
 
   def new
     @community = Community.new
+    @non_owner_users = User.where.not(id: current_user.id).map { |u| [u.nickname, u.id] }
   end
 
   def create
