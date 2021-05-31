@@ -42,7 +42,7 @@ trix-editor.form-control {
 
 .trix-button-group--history-tools, .trix-button--icon-italic, .trix-button--icon-strike,
 .trix-button--icon-quote, .trix-button--icon-code, .trix-button--icon-decrease-nesting-level,
-.trix-button--icon-increase-nesting-level{
+.trix-button--icon-increase-nesting-level, .trix-button--dialog:last-child {
   display: none !important;
 }
 
@@ -86,4 +86,8 @@ trix-editor.form-control {
   flex-grow: 1 !important;
   padding: 16px !important;
   background-color: $light-gray !important;
+}
+
+.link_to_embed {
+  color: $dark-gray;
 }

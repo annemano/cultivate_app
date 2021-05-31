@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :youtube, only: :show
+  resources :spotify, only: :show
 
   resources :communities
   resources :communities, only: :show do
