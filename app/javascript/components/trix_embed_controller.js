@@ -9,7 +9,8 @@ Trix.config.blockAttributes.heading2 = {
 }
 class TrixEmbedController {
   constructor(element) {
-    this.pattern = /^https:\/\/([^\.]+\.)?youtube\.com\/watch\?v=(.*)/
+    this.pattern1 = /^https:\/\/([^\.]+\.)?youtube\.com\/watch\?v=(.*)/
+    this.pattern2 = /^https:\/\/([^\.]+\.)?youtu.be\/(.*)/
     this.element = element
     this.editor = element.editor
     this.toolbar = element.toolbarElement
@@ -27,9 +28,12 @@ class TrixEmbedController {
   }
   didInput(event) {
     let value = event.target.value.trim()
-    let matches = value.match(this.pattern)
-    if (matches != null) {
-      this.fetch(matches[2])
+    let matches1 = value.match(this.pattern1)
+    let matches2 = value.match(this.pattern2)
+    if (matches1 != null) {
+      this.fetch(matches1[2])
+    } else if (matches2 != null) {
+      this.fetch(matches2[2])
     } else {
       this.reset()
     }
