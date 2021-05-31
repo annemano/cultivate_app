@@ -6,3 +6,13 @@
   align-items: center;
   height: 80vh;
 }
+
+.menu_icon_container {
+  display: flex;
+  margin: 0 auto;
+  // height: 80vh;
+  width: 300px;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
