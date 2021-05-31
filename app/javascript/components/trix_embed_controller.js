@@ -10,6 +10,7 @@ Trix.config.blockAttributes.heading2 = {
 class TrixEmbedController {
   constructor(element) {
     this.pattern = /^https:\/\/([^\.]+\.)?youtube\.com\/watch\?v=(.*)/
+    this.spotpattern = /^https:\/\/([^\.]+\.)?open.spotify\.com\/track\/(.*)(\?.*)$/
     this.element = element
     this.editor = element.editor
     this.toolbar = element.toolbarElement
@@ -28,8 +29,11 @@ class TrixEmbedController {
   didInput(event) {
     let value = event.target.value.trim()
     let matches = value.match(this.pattern)
+    let spotmatches = value.match(this.spotpattern)
     if (matches != null) {
       this.fetch(matches[2])
+    } else if (spotmatches != null) {
+      this.spotfetch(spotmatches[2])
     } else {
       this.reset()
     }
@@ -37,6 +41,14 @@ class TrixEmbedController {
   fetch(value) {
     Rails.ajax({
       url: `/youtube/${encodeURIComponent(value)}`,
+      type: 'get',
+      error: this.reset.bind(this),
+      success: this.showEmbed.bind(this)
+    })
+  }
+   spotfetch(value) {
+    Rails.ajax({
+      url: `/spotify/${encodeURIComponent(value)}`,
       type: 'get',
       error: this.reset.bind(this),
       success: this.showEmbed.bind(this)
