@@ -13,8 +13,4 @@ class Community < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
-
-  # def owner
-  #   community_members.find_by(owner: true).user
-  # end
 end

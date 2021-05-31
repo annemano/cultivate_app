@@ -2,7 +2,6 @@ class User < ApplicationRecord
   before_create :set_nickname
 
   has_many :entries, dependent: :destroy
-
   has_many :messages, dependent: :destroy
 
   has_many :community_members, dependent: :destroy
@@ -15,6 +14,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Automatically set a nickname when a new user is created.
   def set_nickname
     self.nickname = email.gsub(/@.*/, "")
   end

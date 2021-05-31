@@ -9,6 +9,9 @@
         <%= link_to 'Edit community', edit_community_path(community) %>
         <br>
         <%= link_to 'Delete community', community_path(community), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% else %>
+        <br>
+        <%= link_to 'Exit community', community_member_path(community), method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
     <% end %>
   </div>

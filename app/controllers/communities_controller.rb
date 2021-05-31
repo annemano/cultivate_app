@@ -19,13 +19,15 @@ class CommunitiesController < ApplicationController
     @community = Community.new(community_params)
     @community.community_members.build(user: current_user, owner: true)
     if @community.save
-      redirect_to community_path(@community)
+      redirect_to communities_path
     else
+      @non_owner_users = User.where.not(id: current_user.id).map { |u| [u.nickname, u.id] }
       render :new
     end
   end
 
   def edit
+    @non_owner_users = User.where.not(id: current_user.id).map { |u| [u.nickname, u.id] }
   end
 
   def update
