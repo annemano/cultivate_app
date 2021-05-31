@@ -11,6 +11,7 @@ class CommunitiesController < ApplicationController
 
   def new
     @community = Community.new
+    @non_owner_users = User.where.not(id: current_user.id).map { |u| [u.nickname, u.id] }
   end
 
   def create
@@ -46,6 +47,6 @@ class CommunitiesController < ApplicationController
   end
 
   def community_params
-    params.require(:community).permit(:name)
+    params.require(:community).permit(:name, community_members_attributes: %i[id user_id _destroy])
   end
 end

@@ -22,6 +22,8 @@ ActiveStorage.start()
 import "bootstrap";
 require("trix")
 require("@rails/actiontext")
+require("jquery")
+require("@nathanvda/cocoon")
 
 // Internal imports, e.g:
 import { toggleQuestionsDisplay } from '../components/guided_entry';

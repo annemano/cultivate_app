@@ -1,0 +1,4 @@
+<div class="nested-fields">
+    <%= f.input :user_id, collection: @non_owner_users %>
+    <%= link_to_remove_association "Remove Member", f %>
+</div>

@@ -1,4 +1,16 @@
-<%= simple_form_for(community) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container w-50">
+  <%= simple_form_for(@community) do |f| %>
+    <%= f.input :name %>
+    <h3>Users</h3>
+    <div id="community_members">
+      <%= f.simple_fields_for :community_members do |fa| %>
+        <%= render 'community_member_fields', f: fa %>
+      <% end %>
+      <div class="link">
+        <%= link_to_add_association "Add Member", f, :community_members %>
+      </div>
+    </div>
+    <%= f.button :submit, class:'btn btn-primary' %>
+  <% end %>
+</div>
+
