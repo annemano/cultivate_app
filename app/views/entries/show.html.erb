@@ -1,3 +1,9 @@
+<div class="buttons">
+<%= link_to 'Back', entries_path, class: 'button-sm' %>
+<%= link_to 'Edit', edit_entry_path(@entry), class: 'button-sm' %>
+<%= link_to 'Home', root_path, class: 'button-sm'  %>
+</div>
+
 <div class="card_entry_show">
   <p><%#= current_user %></p>
   <h4>Updated at:</h4>
@@ -5,8 +11,5 @@
   <h4>Content:</h4>
   <p><%= @entry.content %></p>
 </div>
-<%= link_to 'Edit entry', edit_entry_path(@entry) %>
-<br>
-<%= link_to 'Go back to entries', entries_path %>
-<br>
-<%= link_to 'Go back to home page', root_path  %>
+
+

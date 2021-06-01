@@ -21,10 +21,9 @@
         </div>
         <hr>
         <small><%= entry.content %></small>
-        <%#= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
-          <%= link_to entry_path(entry), method: :delete, data: { confirm: "Delete post? Are you sure?" }  do %>
-            <small><i class="fas fa-minus-circle"></i></small>
-          <% end %>
+        <br>
+        <hr>
+        <small><%= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %></small>
       <% end %>
       <br>
     </div>
