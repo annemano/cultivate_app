@@ -8,9 +8,13 @@
       </div>
     </div>
     <% if @community.owner == current_user %>
-      <i class="fas fa-edit align-items-stretch"></i>
+      <%= link_to edit_community_path(@community) do %>
+        <i class="fas fa-edit align-items-stretch"></i>
+      <% end %>
     <% else %>
-      <i class="fas fa-sign-out-alt align-items-stretch"></i>
+      <%= link_to community_member_path(@community), method: :delete do %>
+        <i class="fas fa-sign-out-alt align-items-stretch"></i>
+      <% end %>
     <% end %>
   </div>
   <div class="chat">

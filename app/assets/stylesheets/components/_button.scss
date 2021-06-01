@@ -58,6 +58,7 @@
 }
 
 .btn-back {
+  width: 80px;
   border-radius: 8px;
   background-color: $light-gray;
   color: $dark-gray;
@@ -70,4 +71,13 @@
 
 .btn-create-community {
   width: 200px;
+}
+
+.btn-delete-community {
+  width: 80px;
+  border-radius: 8px;
+  background-color: red;
+  color: white;
+  border: none;
+  margin-left: 16px;
 }
