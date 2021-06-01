@@ -3,6 +3,7 @@ class CommunitiesController < ApplicationController
 
   def index
     @communities = current_user.communities
+    @requests = current_user.community_requests
   end
 
   def show
@@ -18,13 +19,15 @@ class CommunitiesController < ApplicationController
     @community = Community.new(community_params)
     @community.community_members.build(user: current_user, owner: true)
     if @community.save
-      redirect_to community_path(@community)
+      redirect_to communities_path
     else
+      @non_owner_users = User.where.not(id: current_user.id).map { |u| [u.nickname, u.id] }
       render :new
     end
   end
 
   def edit
+    @non_owner_users = User.where.not(id: current_user.id).map { |u| [u.nickname, u.id] }
   end
 
   def update
@@ -47,6 +50,6 @@ class CommunitiesController < ApplicationController
   end
 
   def community_params
-    params.require(:community).permit(:name, community_members_attributes: %i[id user_id _destroy])
+    params.require(:community).permit(:name, community_requests_attributes: %i[id user_id _destroy])
   end
 end
