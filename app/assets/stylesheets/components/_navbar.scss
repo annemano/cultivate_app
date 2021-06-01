@@ -5,7 +5,7 @@
   text-align: center;
   margin-right: 0;
   i {
-    font-size: 24px; // icons on navbar
+    font-size: 20px; // icons on navbar
   }
 }
 
@@ -33,6 +33,11 @@
 
 #navbarSupportedContent.navbar {
   padding: 4px 4px;
+}
+
+.plus-icon {
+  font-size: 24px;
+  color: $light-gray;
 }
 
 

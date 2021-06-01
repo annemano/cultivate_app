@@ -39,6 +39,17 @@ class EntriesController < ApplicationController
     redirect_to entries_path
   end
 
+  def share
+    @community = Community.find(params[:community_id])
+    @entry = Entry.find(params[:id])
+    @message = Message.new(actiontext_content: @entry.content, community: @community, user: current_user)
+    if @message.save
+      redirect_to community_path(@community, anchor: "message-#{@message.id}")
+    else
+      render "communities/show"
+    end
+  end
+
   private
 
   def set_entry

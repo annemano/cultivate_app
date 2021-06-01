@@ -1,0 +1,15 @@
+.card_show_icons {
+  display: flex;
+  // width: 250px;
+  // justify-content: space-around;
+    color: $light-gray !important;
+    font-size: 24px;
+
+}
+
+.buttons {
+  display: flex;
+  padding: 12px 16px;
+  margin: 16px auto;
+  justify-content: space-between;
+}
