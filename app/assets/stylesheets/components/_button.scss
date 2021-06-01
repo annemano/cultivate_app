@@ -49,6 +49,7 @@
 
 
 
+
 .button-sq {
   font-size: 52px;
   background-color: $dark-green;
@@ -70,4 +71,19 @@
     border: 3px solid $dark-green;
     background-color: transparent;
   }
+}
+
+.btn-back {
+  border-radius: 8px;
+  background-color: $light-gray;
+  color: $dark-gray;
+  border: none;
+}
+
+.btn-community {
+  width: 160px;
+}
+
+.btn-create-community {
+  width: 200px;
 }

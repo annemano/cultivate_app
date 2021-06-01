@@ -1,0 +1,45 @@
+.community-cards-container {
+  width: 80%;
+}
+
+// .community-header {
+//   margin: 8px auto;
+//   width: 200px;
+//   color: black;
+//   border: 1px solid black;
+//   background-color: rgba(250, 250, 250, 0.9);
+//   padding: 4px;
+//   border-radius: 8px;
+// }
+
+.community-header {
+  margin: 8px auto;
+  width: 200px;
+  color: $light-gray;
+}
+
+.community-card {
+  width: 100%;
+  background-color: $light-gray;
+  border-radius: 8px;
+  h5 {
+    color: $dark-gray;
+  }
+  a {
+    color: $dark-gray;
+  }
+  .deny {
+    font-weight: bold;
+    color: $red;
+  }
+  .accept {
+    font-weight: bold;
+    color: darkgreen;
+  }
+}
+
+.owner-tag {
+  justify-self: end;
+  margin-left: 64px;
+  color: darkgreen;
+}

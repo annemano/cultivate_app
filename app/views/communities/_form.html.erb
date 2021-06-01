@@ -1,16 +1,16 @@
-<div class="container w-50">
-  <%= simple_form_for(@community) do |f| %>
-    <%= f.input :name %>
-    <h3>Users</h3>
-    <div id="community_requests">
-      <%= f.simple_fields_for :community_requests do |fa| %>
-        <%= render 'community_request_fields', f: fa %>
+<%= simple_form_for(@community, html: { class: "community-form"}) do |f| %>
+  <%= f.input :name, label: false, placeholder: "Community name", input_html: { class: "community-name-input" } %>
+  <div id="community_requests">
+    <%= f.simple_fields_for :community_requests do |fa| %>
+      <%= render 'community_request_fields', f: fa %>
+    <% end %>
+    <div class="link">
+      <%= link_to_add_association f, :community_requests do %>
+        <i class="fas fa-user-plus add-user-icon"></i>
       <% end %>
-      <div class="link">
-        <%= link_to_add_association "Add Member", f, :community_requests %>
-      </div>
     </div>
-    <%= f.button :submit, class:'btn btn-primary' %>
-  <% end %>
-</div>
+  </div>
+  <%= f.button :submit, class:'btn button-sm my-4 btn-create-community' %>
+  <%= link_to 'Go back', communities_path, class: 'btn btn-primary btn-back' %>
+<% end %>
 
