@@ -3,7 +3,7 @@
   <h2>Created by <%= @community.owner.nickname %></h2>
   <div id="messages" data-community-id="<%= @community.id %>">
     <% @community.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
+      <%= render "messages/message", message: message %>
     <% end %>
   </div>
   <%= simple_form_for [ @community, @message ], remote: true do |f| %>
