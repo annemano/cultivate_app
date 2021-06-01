@@ -1,10 +1,10 @@
-<h1>My Entries</h1>
+<div class="container-entries">
+  <h1>My Entries</h1>
   <% @entries.reverse.each do |entry| %>
     <div class="card_entry">
       <%= link_to entry_path(entry) do %>
-        <%#= current_user %>
         <div class="entry-title">
-          <h4><%= entry.updated_at.strftime("%b %d, %Y") %></h4>
+          <h4><%= entry.updated_at.strftime("%e %B %Y") %></h4>
           <% if entry.mood == 1%>
             <i class="fas fa-meh emoji emoji-entry"></i>
           <% elsif entry.mood == 2 %>
@@ -19,23 +19,25 @@
             <i class="fas fa-tired emoji emoji-entry"></i>
           <% end %>
         </div>
-        <hr>
         <small><%= entry.content %></small>
       <% end %>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="entry-<%= entry.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Share
-        </button>
-        <div class="dropdown-menu" aria-labelledby="entry-<%= entry.id %>">
-          <% current_user.communities.each do |community| %>
-            <%= link_to community.name, entry_share_path(entry, community), class: "dropdown-item" %>
-          <% end %>
+      <div class="entry-footer">
+        <div class="dropdown <%= current_user.communities.present? ? '' : 'invisible' %>">
+          <button class="btn p-0" type="button" id="entry-<%= entry.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-share"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="entry-<%= entry.id %>">
+            <% current_user.communities.each do |community| %>
+              <%= link_to community.name, entry_share_path(entry, community), class: "dropdown-item" %>
+            <% end %>
+          </div>
         </div>
-      </div>
-        <%#= link_to 'Delete entry', entry_path(entry), method: :delete, data: { confirm: "Are you sure?" } %>
-        <%= link_to entry_path(entry), method: :delete, data: { confirm: "Delete post? Are you sure?" }  do %>
-          <small><i class="fas fa-minus-circle"></i></small>
+        <%= link_to edit_entry_path(entry) do %>
+          <small><i class="fas fa-edit"></i></small>
         <% end %>
+      </div>
     </div>
   <% end %>
-  <%= link_to 'Go back to home page', root_path  %>
+</div>
+
+
