@@ -1,8 +1,9 @@
-<div class="container">
-  <div class="buttons">
-    <%= link_to 'Back', entry_path(@entry), class: 'button-sm' %>
-    <%= link_to 'Home', root_path, class: 'button-sm' %>
-  </div>
-  <br>
-  <%= render "form", entry: @entry %>
+<div class="container-editor">
+  <%= simple_form_for(@entry) do |f| %>
+    <%= f.input :content, as: :rich_text_area, label: false %>
+    <div class="buttons">
+      <%= link_to 'Delete', entry_path(@entry), method: :delete, data: { confirm: 'Delete this entry?' }, class: 'btn mx-3 button-sm' %>
+      <%= f.button :submit, "Update", class: 'btn mx-3 button-sm'  %>
+    </div>
+  <% end %>
 </div>
