@@ -1,12 +1,11 @@
-
-<canvas id="canvas" class="mb-3"></canvas>
-<br>
-<input id="colors-canvas" type="color" placeholder="Colors">
-<input id="width-canvas" type="range" min="1" max="100">
-<br>
-<div id="doodle-options" class="mt-4">
+<canvas id="canvas"></canvas>
+<div id="doodle-controls" class="mt-3">
+  <div id="restore-canvas" class="button-sm-gray m-2">Undo</div>
+  <input id="colors-canvas" type="color" placeholder="Colors">
+  <input id="width-canvas" type="range" min="1" max="100">
+  <div id="clear-canvas" class="button-sm-gray m-2">Clear</div>
+</div>
+<div id="doodle-options" class="mt-3">
   <%= link_to 'Back', menu_path, class: 'button-sm m-2' %>
-  <div id="restore-canvas" class="btn btn-light m-2">Undo</div>
-  <div id="clear-canvas" class="btn btn-light m-2">Clear</div>
   <a id="save-doodle" download="doodle.jpg" href="" class="button-sm m-2">Save</a>
 </div>
