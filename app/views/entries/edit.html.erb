@@ -1,4 +1,8 @@
-<%= render "form", entry: @entry %>
-<%= link_to 'Go back', entry_path(@entry) %>
-<br>
-<%= link_to 'Go back to home page', root_path %>
+<div class="container">
+  <div class="buttons">
+    <%= link_to 'Back', entry_path(@entry), class: 'button-sm' %>
+    <%= link_to 'Home', root_path, class: 'button-sm' %>
+  </div>
+  <br>
+  <%= render "form", entry: @entry %>
+</div>
