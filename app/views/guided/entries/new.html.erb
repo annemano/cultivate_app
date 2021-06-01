@@ -7,8 +7,8 @@
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[0].id } %>
         <% end %>
         <br>
-        <%= link_to "Back", menu_path, class: "btn button-sm"  %>
-        <div id="next-1" class="btn button-sm">Next</div>
+        <%= link_to "Back", menu_path, class: "btn button-sm mx-3"  %>
+        <div id="next-1" class="btn button-sm mx-3">Next</div>
         <br>
         <br>
         <i class="fas fa-circle"></i>
@@ -21,8 +21,8 @@
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[1].id } %>
         <% end %>
         <br>
-        <div id="back-2" class="btn button-sm">Back</div>
-        <div id="next-2" class="btn button-sm">Next</div>
+        <div id="back-2" class="btn button-sm mx-3">Back</div>
+        <div id="next-2" class="btn button-sm mx-3">Next</div>
         <br>
         <br>
         <i class="far fa-circle"></i>
@@ -35,8 +35,8 @@
           <%= fa.input :question_id, as: :hidden, input_html: { value: @questions[2].id } %>
         <% end %>
         <br>
-        <div id="back-3" class="btn button-sm">Back</div>
-        <%= f.button :submit, "Next", class: "btn button-sm" %>
+        <div id="back-3" class="btn button-sm mx-3">Back</div>
+        <%= f.button :submit, "Next", class: "btn button-sm mx-3" %>
         <br>
         <br>
         <i class="far fa-circle"></i>
@@ -48,11 +48,4 @@
 </div>
 <br>
 <%#= link_to 'Home', root_path, class: 'button-sm'  %>
-
-<!-- cancel icon-->
-
-<%= link_to root_path, class: 'cancel' do %>
-  <i class="far fa-times-circle"></i>
-<% end %>
-
 
