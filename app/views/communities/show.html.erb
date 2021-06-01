@@ -1,4 +1,4 @@
-<div class="container chat-container">
+<div class="container chat-container my-3">
   <div class="chat-header-container d-flex justify-content-between">
     <div class="community-info">
       <h4>#<%= @community.name %></h4>
@@ -7,7 +7,11 @@
         <i class="me-2"><%= @community.users.count %></i>
       </div>
     </div>
-    <i class="fas fa-edit align-items-stretch"></i>
+    <% if @community.owner == current_user %>
+      <i class="fas fa-edit align-items-stretch"></i>
+    <% else %>
+      <i class="fas fa-sign-out-alt align-items-stretch"></i>
+    <% end %>
   </div>
   <div class="chat">
     <div id="messages" data-community-id="<%= @community.id %>">

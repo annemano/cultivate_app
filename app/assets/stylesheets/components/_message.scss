@@ -20,3 +20,13 @@
   border: 1px solid $dark-gray !important;
   height: 40px !important;
 }
+
+.message-container {
+  text-align: left;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-bottom: 0.5px solid $dark-gray;
+  p {
+    margin: 0;
+  }
+}
