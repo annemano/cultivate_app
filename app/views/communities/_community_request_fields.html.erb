@@ -1,5 +1,5 @@
 <div class="nested-fields d-flex align-items-center justify-content-center w-100">
-    <%= f.input :user_id, collection: @non_owner_users, label: false %>
+    <%= f.input :user_id, collection: @non_owner_users, label: false, input_html: { class: "community-user-input" } %>
     <%= link_to_remove_association f do %>
       <i class="fas fa-times delete-user-icon"></i>
     <% end %>
