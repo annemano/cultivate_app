@@ -1,5 +1,10 @@
-<div class="container">
-  <%= render "form", entry: @entry %>
-  <%= link_to 'Back', menu_path, class: 'button-sm' %>
+<div class="container-editor">
+  <%= simple_form_for(@entry) do |f| %>
+    <%= f.input :content, as: :rich_text_area, placeholder: "Take a few deep breaths and consider the positive things that are happening today.", label: false %>
+    <div class="buttons">
+      <%= link_to 'Back', menu_path, class: 'btn mx-3 button-sm' %>
+      <%= f.button :submit, "Post", class: 'btn mx-3 button-sm'  %>
+    </div>
+  <% end %>
 </div>
 

@@ -1,15 +1,40 @@
-<div class="buttons">
-<%= link_to 'Back', entries_path, class: 'button-sm' %>
-<%= link_to 'Edit', edit_entry_path(@entry), class: 'button-sm' %>
-<%= link_to 'Home', root_path, class: 'button-sm'  %>
+<div class="container-entry">
+  <div class="card_entry_show">
+    <div class="entry-title">
+      <h4><%= @entry.created_at.strftime("%e %B %Y") %></h4>
+      <% if @entry.mood == 1%>
+        <i class="fas fa-meh emoji emoji-entry"></i>
+      <% elsif @entry.mood == 2 %>
+        <i class="fas fa-smile emoji emoji-entry"></i>
+      <% elsif @entry.mood == 3 %>
+        <i class="fas fa-angry emoji emoji-entry"></i>
+      <% elsif @entry.mood == 4 %>
+        <i class="fas fa-frown emoji emoji-entry"></i>
+      <% elsif @entry.mood == 5 %>
+        <i class="fas fa-sad-tear emoji emoji-entry"></i>
+      <% elsif @entry.mood == 6 %>
+        <i class="fas fa-tired emoji emoji-entry"></i>
+      <% end %>
+    </div>
+      <small><%= @entry.content %></small>
+      <div class="entry-footer">
+        <div class="dropdown <%= current_user.communities.present? ? '' : 'invisible' %>">
+          <button class="btn p-0" type="button" id="entry-<%= @entry.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-share"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="entry-<%= @entry.id %>">
+            <% current_user.communities.each do |community| %>
+              <%= link_to community.name, entry_share_path(@entry, community), class: "dropdown-item" %>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to edit_entry_path(@entry) do %>
+          <small><i class="fas fa-edit"></i></small>
+        <% end %>
+      </div>
+  </div>
+  <div class="buttons d-flex justify-content-center">
+    <%= link_to 'Back', entries_path, class: 'btn button-sm mx-3' %>
+    <%= link_to 'Home', root_path, class: 'btn button-sm mx-3'  %>
+  </div>
 </div>
-
-<div class="card_entry_show">
-  <p><%#= current_user %></p>
-  <h4>Updated at:</h4>
-  <p><%= @entry.updated_at %></p>
-  <h4>Content:</h4>
-  <p><%= @entry.content %></p>
-</div>
-
-

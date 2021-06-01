@@ -5,7 +5,7 @@
   <h5 class="my-5">How are you feeling today?</h5>
 
   <!-- Emojis -->
-
+  <div class="mood_container">
     <%= simple_form_for @entry, url: menu_mood_path do |f| %>
       <%= f.input :mood, as: :radio_buttons,
       collection: [[1, '<i class="fas fa-meh emoji"></i>'.html_safe],
@@ -15,6 +15,6 @@
                   item_wrapper_class: 'tag-item' %>
       <%= f.button :submit, "Confirm", class: "button-lg my-5" %>
     <% end %>
-
+  </div>
 </div>
 

@@ -7,13 +7,7 @@
     <% end %>
   </div> -->
 
-  <!-- word nav buttons -->
-<!--   <div class="menu_container">
-    <%= link_to "Guide Me", new_guided_entry_path, class: 'button-lg' %>
-    <%= link_to "Write", new_entry_path, class: 'button-lg' %>
-    <%= link_to "Communities", communities_path, class: 'button-lg' %>
-    <%= link_to "Doodle", doodle_path, class: 'button-lg' %>
-  </div> -->
+
   <!-- icon nav buttons -->
   <h2 class="my-4">Choose to Express</h2>
   <div class="menu_icon_container">
@@ -26,6 +20,9 @@
     <% end %>
     <%= link_to doodle_path, class: 'button-sq' do %>
       <i class="fas fa-paint-brush"></i>
+    <% end %>
+    <%= link_to communities_path, class: 'button-sq' do %>
+      <i class="fas fa-users"></i>
     <% end %>
     <%= link_to root_path, class: 'button-sq' do %>
       <% if @mood == "1"%>
@@ -44,9 +41,6 @@
         <i class="fas fa-meh-blank"></i>
       <% end %>
 
-    <% end %>
-    <%= link_to communities_path, class: 'button-sq' do %>
-      <i class="fas fa-users"></i>
     <% end %>
   </div>
 </div>
