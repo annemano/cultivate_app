@@ -6,7 +6,7 @@ const initCommunityCable = () => {
     const id = messagesContainer.dataset.communityId;
     consumer.subscriptions.create({ channel: "CommunityChannel", id: id }, {
       received(data) {
-        console.log(messagesContainer.insertAdjacentHTML('beforeend', data));
+        messagesContainer.insertAdjacentHTML('beforeend', data);
       }
     })
   }
