@@ -1,30 +1,26 @@
-<h1>My Communities</h1>
-
-<% @communities.each do |community| %>
-  <div class="container my-2" style="background-color: white; width: 50%;">
-    <%= link_to community_path(community) do %>
-      <%= community.name %>
-      <% if community.owner == current_user %>
-        <br>
-        <%= link_to 'Edit community', edit_community_path(community) %>
-        <br>
-        <%= link_to 'Delete community', community_path(community), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% else %>
-        <br>
-        <%= link_to 'Exit community', community_member_path(community), method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="container community-cards-container" style="border: 1px solid red;">
+  <% @communities.each do |community| %>
+    <div class="container community-card my-4">
+      <%= link_to community_path(community) do %>
+        <h5><%= community.name %></h5>
+        <div class="community-members d-flex justify-content-center align-items-center">
+          <i class="fas fa-users"></i>
+          <%= community.users.count %>
+          <% if community.owner == current_user %>
+            <i class="fas fa-tag justify-self-end"></i>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
-<% @requests.each do |request| %>
-  <div class="container my-2" style="background-color: lightgray; width: 50%;">
-    <%= request.community.name %>
-      <br>
-      <%= link_to 'Accept', decide_path(request: request, accept: true) %>
-      <br>
-      <%= link_to 'Deny', decide_path(request: request, accept: false) %>
-  </div>
-<% end %>
-<%= link_to 'Create a new community', new_community_path %>
-<br>
-<%= link_to 'Go back to home page', root_path  %>
+    </div>
+  <% end %>
+  <% @requests.each do |request| %>
+    <div class="container request-card my-4">
+        <h5><%= request.community.name %></h5>
+        <div class="requests d-flex justify-content-around align-items-center">
+          <%= link_to 'Accept', decide_path(request: request, accept: true), class: "accept" %>
+          <%= link_to 'Deny', decide_path(request: request, accept: false), class: "deny" %>
+        </div>
+    </div>
+  <% end %>
+  <%= link_to 'New Community', new_community_path, class: "btn button-sm btn-community" %>
+</div>

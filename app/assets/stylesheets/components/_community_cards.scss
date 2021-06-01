@@ -1,0 +1,30 @@
+.community-cards-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.community-card {
+  width: 80%;
+  background-color: $light-green;
+  border-radius: 8px;
+  a {
+    color: black;
+  }
+}
+
+.request-card {
+  width: 80%;
+  background-color: $light-gray;
+  border-radius: 8px;
+  color: black;
+}
+
+.requests .accept {
+  font-weight: bold;
+  color: darkgreen
+}
+
+.requests .deny {
+  font-weight: bold;
+  color: $red
+}
