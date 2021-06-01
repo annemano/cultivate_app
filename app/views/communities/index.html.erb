@@ -1,4 +1,4 @@
-<div class="container community-cards-container" style="border: 1px solid red;">
+<div class="container community-cards-container">
   <% @communities.each do |community| %>
     <div class="container community-card my-4">
       <%= link_to community_path(community) do %>
@@ -7,7 +7,7 @@
           <i class="fas fa-users"></i>
           <%= community.users.count %>
           <% if community.owner == current_user %>
-            <i class="fas fa-tag justify-self-end"></i>
+            <i class="fas fa-tag owner-tag"></i>
           <% end %>
         </div>
       <% end %>

@@ -1,10 +1,14 @@
 .community-cards-container {
+  background-color: rgba(250, 250, 250, 0.8);
+  border: 1px solid white;
+  border-radius: 8px;
   width: 80%;
 }
 
 .community-card {
   width: 80%;
   background-color: $light-green;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   a {
     color: black;
@@ -14,16 +18,23 @@
 .request-card {
   width: 80%;
   background-color: $light-gray;
+  border: 1px solid rgba(0, 140, 0, 0.6);
   border-radius: 8px;
   color: black;
 }
 
 .requests .accept {
   font-weight: bold;
-  color: darkgreen
+  color: darkgreen;
 }
 
 .requests .deny {
   font-weight: bold;
-  color: $red
+  color: $red;
+}
+
+.owner-tag {
+  justify-self: end;
+  margin-left: 64px;
+  color: darkgreen;
 }
