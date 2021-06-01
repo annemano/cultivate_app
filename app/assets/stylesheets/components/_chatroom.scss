@@ -1,5 +1,6 @@
 .chat-container {
-  width: 90%;
+  width: 90vw;
+  padding: 0;
 }
 
 .chat {
@@ -39,6 +40,11 @@
 }
 
 .fa-edit {
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.fa-user-slash {
   color: white !important;
   font-size: 24px !important;
 }

@@ -37,6 +37,11 @@ html, body {
   small {
     font-size: 14px;
   }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 // .container {

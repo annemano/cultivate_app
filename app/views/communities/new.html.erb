@@ -1,1 +1,4 @@
-<%= render "form", community: @community %>
+<div class="community-form-container">
+  <%= render "form", community: @community %>
+  <%= link_to 'Go back', communities_path, class: 'btn btn-primary btn-back' %>
+</div>
