@@ -5,21 +5,3 @@
   position: relative;
 }
 
-.navbar {
-}
-
-.cancel {
-  position: absolute;
-  top: 70px;
-  left: 30px;
-  font-size: 24px;
-  color: $light-gray;
-  // background-color: $light-gray;
-  // height: 30px;
-  // width: 30px;
-  // border-radius: 50%;
-  &:hover {
-    color: $dark-green;
-    text-decoration: none;
-  }
-}
