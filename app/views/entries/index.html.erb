@@ -1,5 +1,5 @@
 <div class="container-entries">
-  <h1><%= current_user.first_name %>'s Gratitudes</h1>
+  <h1>My Entries</h1>
   <% @entries.reverse.each do |entry| %>
     <div class="card_entry">
       <%= link_to entry_path(entry) do %>
