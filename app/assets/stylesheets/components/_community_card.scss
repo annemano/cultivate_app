@@ -11,7 +11,7 @@
 .community-card {
   position: relative;
   width: 100%;
-  background-color: rgba(211,211,211,1);
+  background-color: rgba(237,237,237, 0.8);
   border-radius: 8px;
   h5 {
     color: $dark-green;
@@ -19,6 +19,11 @@
   a {
     color: $dark-gray;
   }
+  p {
+    margin: 0;
+    padding-left: 4px;
+  }
+
   .deny {
     font-weight: bold;
     color: rgba(253,16,21, 1);
@@ -31,9 +36,10 @@
 
 .owner-tag {
   position: absolute;
-  top: 4px;
-  right: 5px;
+  top: 7px;
+  right: 7px;
   margin-left: 64px;
-  color: #fd7e15;
+  color: $dark-gray;
+  font-size: 14px;
 }
 

@@ -6,7 +6,7 @@
         <h5><%= community.name %></h5>
         <div class="community-members d-flex justify-content-center align-items-center">
           <i class="fas fa-users"></i>
-          <%= community.users.count %>
+          <p><%= community.users.count %></p>
         </div>
         <% if community.owner == current_user %>
           <i class="fas fa-crown owner-tag"></i>
