@@ -1,15 +1,33 @@
-<div class="container">
-  <h1>#<%= @community.name %></h1>
-  <h2>Created by <%= @community.owner.nickname %></h2>
-  <div id="messages" data-community-id="<%= @community.id %>">
-    <% @community.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+<div class="container chat-container my-3">
+  <div class="chat-header-container d-flex justify-content-between align-items-center">
+    <div class="community-info">
+      <h4>#<%= @community.name %></h4>
+      <div class="community-users-info d-flex justify-content-start align-items-center me-2">
+        <i class="fas fa-users"></i>
+        <small class="me-2"><%= @community.users.count %></small>
+      </div>
+    </div>
+    <% if @community.owner == current_user %>
+      <%= link_to edit_community_path(@community) do %>
+        <i class="fas fa-edit align-items-stretch"></i>
+      <% end %>
+    <% else %>
+      <%= link_to community_member_path(@community), method: :delete, data: { confirm: 'Exit this community?' } do %>
+        <i class="fas fa-user-slash align-items-stretch"></i>
+      <% end %>
     <% end %>
   </div>
-  <%= simple_form_for [ @community, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@community.name}" %>
-  <% end %>
-  <%= link_to 'Go back', communities_path  %>
+  <div class="chat">
+    <div id="messages" data-community-id="<%= @community.id %>">
+      <% @community.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [ @community, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message ##{@community.name}", input_html: { class: "send-message" }  %>
+    <% end %>
+  </div>
 </div>
+<%= link_to 'Go back', communities_path, class: 'btn btn-back mb-2' %>
 
 

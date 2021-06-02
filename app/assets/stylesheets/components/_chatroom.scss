@@ -1,3 +1,13 @@
+.chat-container {
+  width: 90vw;
+  padding: 0;
+}
+
+.chat {
+  background-color: $light-gray;
+  border-radius: 4px;
+}
+
 .chatroom {
   background: white;
   height: calc(100vh - 66px);
@@ -26,5 +36,21 @@
 
   .form-group {
     margin-bottom: 0;
+  }
+}
+
+.fa-edit {
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.fa-user-slash {
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.community-info {
+  h4 {
+    margin: 0;
   }
 }

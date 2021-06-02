@@ -1,4 +1,6 @@
-<%= render "form", community: @community %>
-<%= link_to 'Go back', communities_path %>
-<br>
-<%= link_to 'Go back to home page', root_path  %>
+<div class="community-form-container">
+  <%= render "form", community: @community %>
+  <%= link_to 'Go back', communities_path, class: 'btn btn-primary btn-back' %>
+  <%= link_to 'Delete', community_path(@community), method: :delete, data: { confirm: 'Delete this community?' }, class: 'btn btn-primary btn-delete-community' %>
+</div>
+

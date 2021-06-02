@@ -8,3 +8,25 @@
     color: $gray-500;
   }
 }
+
+#messages {
+  background-color: $light-gray;
+  color: $dark-gray;
+  border-radius: 8px;
+}
+
+.send-message {
+  border-radius: 8px !important;
+  border: 1px solid $dark-gray !important;
+  height: 40px !important;
+}
+
+.message-container {
+  text-align: left;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-bottom: 0.5px solid darkgray;
+  p {
+    margin: 0;
+  }
+}
