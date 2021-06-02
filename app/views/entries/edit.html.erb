@@ -1,9 +1,9 @@
 <div class="container-editor">
   <%= simple_form_for(@entry) do |f| %>
     <%= f.input :content, as: :rich_text_area, label: false %>
-    <div class="buttons">
-      <%= link_to 'Delete', entry_path(@entry), method: :delete, data: { confirm: 'Delete this entry?' }, class: 'btn mx-3 button-sm' %>
-      <%= f.button :submit, "Update", class: 'btn mx-3 button-sm'  %>
+    <div class="buttons d-flex justify-content-between">
+      <%= link_to 'Delete', entry_path(@entry), method: :delete, data: { confirm: 'Delete this entry?' }, class: 'btn button-sm' %>
+      <%= f.button :submit, "Update", class: 'btn button-sm'  %>
     </div>
   <% end %>
 </div>
