@@ -1,15 +1,5 @@
 <%= simple_form_for(@community, html: { class: "community-form"}) do |f| %>
   <%= f.input :name, label: false, placeholder: "Community name", input_html: { class: "community-name-input" } %>
-  <div id="community_requests">
-    <%= f.simple_fields_for :community_requests do |fa| %>
-      <%= render 'community_request_fields', f: fa %>
-    <% end %>
-    <div class="link">
-      <%= link_to_add_association f, :community_requests do %>
-        <i class="fas fa-user-plus add-user-icon"></i>
-      <% end %>
-    </div>
-  </div>
   <%= f.button :submit, class:'btn button-sm my-4 btn-create-community' %>
 <% end %>
 
