@@ -17,17 +17,29 @@
       <% end %>
     <% end %>
   </div>
+
+  <!-- MESSAGES -->
   <div class="chat">
     <div id="messages" data-community-id="<%= @community.id %>">
       <% @community.messages.each do |message| %>
         <%= render "messages/message", message: message %>
       <% end %>
     </div>
-    <%= simple_form_for([ @community, @message ], remote: true) do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@community.name}", input_html: { class: "send-message" }  %>
-    <% end %>
+
+    <!-- SEND MESSAGE -->
+    <div class="chatroom-footer">
+      <%= simple_form_for [ @community, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@community.name}", input_html: { class: "send-message" }  %>
+        <div class="d-flex justify-content-between align-items-center">
+          <%= link_to 'Back', communities_path, class: 'btn button-sm' %>
+          <%= f.button :submit, "Send", class: "btn button-sm" %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
-<%= link_to 'Go back', communities_path, class: 'btn btn-back mb-2' %>
+
+
 
 
