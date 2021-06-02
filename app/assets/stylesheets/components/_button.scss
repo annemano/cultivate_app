@@ -48,6 +48,8 @@
 
 
 .button-sq {
+  display: flex;
+  flex-direction: column;
   font-size: 52px;
   background-color: $dark-green;
   // padding: 24px 24px;
