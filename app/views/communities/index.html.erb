@@ -7,10 +7,10 @@
         <div class="community-members d-flex justify-content-center align-items-center">
           <i class="fas fa-users"></i>
           <%= community.users.count %>
-          <% if community.owner == current_user %>
-            <i class="fas fa-tag owner-tag"></i>
-          <% end %>
         </div>
+        <% if community.owner == current_user %>
+          <i class="fas fa-crown owner-tag"></i>
+        <% end %>
       <% end %>
     </div>
   <% end %>
@@ -18,8 +18,8 @@
     <div class="container community-card my-4 py-2">
         <h5><%= request.community.name %></h5>
         <div class="requests d-flex justify-content-around align-items-center">
-          <%= link_to 'Accept', decide_path(request: request, accept: true), class: "accept" %>
           <%= link_to 'Deny', decide_path(request: request, accept: false), class: "deny" %>
+          <%= link_to 'Accept', decide_path(request: request, accept: true), class: "accept" %>
         </div>
     </div>
   <% end %>

@@ -9,28 +9,31 @@
 }
 
 .community-card {
+  position: relative;
   width: 100%;
-  background-color: $light-gray;
+  background-color: rgba(211,211,211,1);
   border-radius: 8px;
   h5 {
-    color: $dark-gray;
+    color: $dark-green;
   }
   a {
     color: $dark-gray;
   }
   .deny {
     font-weight: bold;
-    color: $red;
+    color: rgba(253,16,21, 1);
   }
   .accept {
     font-weight: bold;
-    color: darkgreen;
+    color: rgba(0,100,0, 1);
   }
 }
 
 .owner-tag {
-  justify-self: end;
+  position: absolute;
+  top: 4px;
+  right: 5px;
   margin-left: 64px;
-  color: $dark-green;
+  color: #fd7e15;
 }
 
