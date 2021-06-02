@@ -6,7 +6,7 @@
   margin-right: 0;
   min-width: 250px
   i {
-    font-size: 20px; // icons on navbar
+    font-size: 24px; // icons on navbar
   }
 }
 
@@ -36,9 +36,6 @@
   padding: 4px 4px;
 }
 
-.plus-icon {
-  font-size: 24px;
-  color: $light-gray;
+#navbarDropdown {
+    font-size: 20px; // avatar icon
 }
-
-
