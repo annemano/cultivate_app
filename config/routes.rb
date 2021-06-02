@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   # Communities
   resources :communities
   resources :communities, only: :show do
-    resources :messages, only: :create
+    resources :messages, only: %i[create]
   end
+  resources :messages, only: :destroy
 
   resources :community_members, only: :destroy
 

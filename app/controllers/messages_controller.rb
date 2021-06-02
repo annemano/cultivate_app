@@ -12,6 +12,12 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    redirect_to community_path(@message.community)
+  end
+
   private
 
   def message_params
