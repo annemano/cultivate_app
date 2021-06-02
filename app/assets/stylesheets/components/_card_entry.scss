@@ -43,10 +43,17 @@
   align-items: center;
 }
 
-.fa-share, .fa-edit {
+
+.fa-share, .entry-footer .fa-edit {
   font-size: 18px;
   color: $dark-green;
 }
+
+.fa-edit > i {
+  font-size: 18px;
+  color: $dark-green;
+}
+
 
 .container-editor {
   width: 90vw;
