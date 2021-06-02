@@ -6,8 +6,8 @@
     </i>
     <p><%= message.content %></p>
     <% if message.user == current_user %>
-      <%= link_to message_path(message), method: :delete, data: { confirm: 'Delete this message?' } do %>
-        <i class="fas fa-times delete-user-icon"></i>
+      <%= link_to community_message_path(message), method: :delete, data: { confirm: 'Delete this message?' } do %>
+        <i class="far fa-times-circle delete-message-icon"></i>
       <% end %>
     <% end %>
   </div>
@@ -18,5 +18,10 @@
       <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     </i>
     <p><%= message.actiontext_content %></p>
+    <% if message.user == current_user %>
+      <%= link_to community_message_path(message), method: :delete, data: { confirm: 'Delete this message?' } do %>
+        <i class="far fa-times-circle delete-message-icon"></i>
+      <% end %>
+    <% end %>
   </div>
 <% end %>
