@@ -23,7 +23,7 @@
         <%= render "messages/message", message: message %>
       <% end %>
     </div>
-    <%= simple_form_for [ @community, @message ], remote: true do |f| %>
+    <%= simple_form_for([ @community, @message ], remote: true) do |f| %>
       <%= f.input :content, label: false, placeholder: "Message ##{@community.name}", input_html: { class: "send-message" }  %>
     <% end %>
   </div>
