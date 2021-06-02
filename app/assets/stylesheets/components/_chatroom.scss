@@ -4,7 +4,6 @@
 }
 
 .chat {
-  background-color: $light-gray;
   border-radius: 4px;
 }
 
@@ -24,16 +23,14 @@
 }
 
 #messages {
-  padding: 0 1rem;
+  background-color: transparent !important;
   padding-top: 1rem;
   overflow: scroll;
-  max-height: calc(100vh - 66px - 65px - 71px);
+  height: 400px;
 }
 
 #new_message {
   padding: 1rem;
-  border-top: 1px solid $gray-200;
-
   .form-group {
     margin-bottom: 0;
   }
@@ -53,4 +50,11 @@
   h4 {
     margin: 0;
   }
+}
+
+.chatroom-footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
 }
