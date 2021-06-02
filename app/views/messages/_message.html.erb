@@ -6,7 +6,7 @@
     </i>
     <p><%= message.content %></p>
     <% if message.user == current_user %>
-      <%= link_to community_message_path(message), method: :delete, data: { confirm: 'Delete this message?' } do %>
+      <%= link_to message_path(message), method: :delete, data: { confirm: 'Delete this message?' }, remote: true do %>
         <i class="far fa-times-circle delete-message-icon"></i>
       <% end %>
     <% end %>
@@ -19,7 +19,7 @@
     </i>
     <p><%= message.actiontext_content %></p>
     <% if message.user == current_user %>
-      <%= link_to community_message_path(message), method: :delete, data: { confirm: 'Delete this message?' } do %>
+      <%= link_to message_path(message), method: :delete, data: { confirm: 'Delete this message?' }, remote: true do %>
         <i class="far fa-times-circle delete-message-icon"></i>
       <% end %>
     <% end %>

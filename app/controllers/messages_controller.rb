@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
-    redirect_to communities_path
+    redirect_to community_path(@message.community)
   end
 
   private
