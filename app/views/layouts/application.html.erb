@@ -29,6 +29,14 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= favicon_link_tag %>
+    <style>
+      .user-<%= current_user.id %> {
+        background-color: rgba(63,110,67,0.3);
+        text-align: right;
+        margin-right: 0;
+        margin-left: 10vw;
+      }
+    </style>
   </head>
 
   <body>

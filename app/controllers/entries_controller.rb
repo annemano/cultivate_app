@@ -44,6 +44,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     @message = Message.new(actiontext_content: @entry.content, community: @community, user: current_user)
     if @message.save
+      broadcast_message
       redirect_to community_path(@community, anchor: "message-#{@message.id}")
     else
       render "communities/show"
@@ -58,5 +59,12 @@ class EntriesController < ApplicationController
 
   def entry_params
     params.require(:entry).permit(:content)
+  end
+
+  def broadcast_message
+    CommunityChannel.broadcast_to(
+      @community,
+      render_to_string(partial: "messages/message", locals: { message: @message })
+    )
   end
 end
