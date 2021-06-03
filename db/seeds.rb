@@ -69,10 +69,10 @@ questions.each do |question|
 end
 
 #Create Users
-luis = User.create!(email: "Luis@luis.com", password: "123456")
-daniel = User.create!(email: "Daniel@daniel.com", password: "123456")
+luis = User.create!(email: "luis@luis.com", password: "123456")
+daniel = User.create!(email: "daniel@daniel.com", password: "123456")
 annema = User.create!(email: "Anne-Marie@am.com", password: "123456")
-jean = User.create!(email: "Jean@jean.com", password: "123456")
+jean = User.create!(email: "jean@jean.com", password: "123456")
 
 # Create Daniel's and Luis's communities
 dan_community = Community.create!(name: 'Gratitude Safe Space')
