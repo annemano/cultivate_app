@@ -4,7 +4,7 @@
     <div class="card_entry">
       <%= link_to entry_path(entry) do %>
         <div class="entry-title">
-          <h4><%= entry.updated_at.strftime("%e %B %Y") %></h4>
+          <h4><%= entry.created_at.strftime("%e %B %Y") %></h4>
           <% if entry.mood == 1%>
             <i class="fas fa-meh emoji emoji-entry"></i>
           <% elsif entry.mood == 2 %>
