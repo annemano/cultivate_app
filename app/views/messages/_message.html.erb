@@ -1,27 +1,27 @@
 <% if message.content %>
-  <div class="message-container" id="message-<%= message.id %>">
+  <div class="message-container user-<%= message.user.id %>" id="message-<%= message.id %>">
     <i class="author">
       <span><%= message.user.nickname %></span>
       <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     </i>
     <p><%= message.content %></p>
-    <% if message.user == current_user %>
+<!--     <% if message.user == current_user %>
       <%= link_to message_path(message), method: :delete, data: { confirm: 'Delete this message?' }, remote: true do %>
         <i class="far fa-times-circle delete-message-icon"></i>
       <% end %>
-    <% end %>
+    <% end %> -->
   </div>
 <% elsif message.actiontext_content %>
-  <div class="message-container action-text-message" id="message-<%= message.id %>">
+  <div class="message-container user-<%= message.user.id %> action-text-message" id="message-<%= message.id %>">
     <i class="author">
       <span><%= message.user.nickname %></span>
       <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     </i>
     <p><%= message.actiontext_content %></p>
-    <% if message.user == current_user %>
+<!--     <% if message.user == current_user %>
       <%= link_to message_path(message), method: :delete, data: { confirm: 'Delete this message?' }, remote: true do %>
         <i class="far fa-times-circle delete-message-icon"></i>
       <% end %>
-    <% end %>
+    <% end %> -->
   </div>
 <% end %>

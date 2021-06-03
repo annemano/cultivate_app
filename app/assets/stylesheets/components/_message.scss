@@ -16,6 +16,7 @@
 }
 
 .message-container {
+  margin-right: 10vw;
   position: relative;
   background-color: rgba(211,211,211,0.3);
   border-radius: 8px;
@@ -25,10 +26,6 @@
   p {
     margin: 0;
   }
-}
-
-.action-text-message {
-  background-color: rgba(63,110,67,0.3);
 }
 
 .delete-message-icon {
