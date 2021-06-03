@@ -57,6 +57,10 @@ questions = ["What was the best part of the day?",
 Question.destroy_all
 User.destroy_all
 Entry.destroy_all
+Community.destroy_all
+CommunityMember.destroy_all
+CommunityRequest.destroy_all
+Message.destroy_all
 
 #Create questions
 questions.each do |question|
@@ -64,13 +68,35 @@ questions.each do |question|
   content: question )
 end
 
-#Create User
-user = User.new(email: "m@m.com", password: "123456", first_name: "Michael")
-user.save!
+#Create Users
+luis = User.create!(email: "Luis@luis.com", password: "123456")
+daniel = User.create!(email: "Daniel@daniel.com", password: "123456")
+annema = User.create!(email: "Anne-Marie@am.com", password: "123456")
+jean = User.create!(email: "Jean@jean.com", password: "123456")
 
-#Create 9 entries
-9.times do
+# Create Daniel's and Luis's communities
+dan_community = Community.create!(name: 'Gratitude Safe Space')
+CommunityMember.create!(user: daniel, community: dan_community, owner: true)
+luis_community = Community.create!(name: 'Luis & Daniel')
+CommunityMember.create!(user: luis, community: luis_community, owner: true)
+
+# Add Anne-Marie and Jean to Daniel's community
+CommunityMember.create!(user: annema, community: dan_community)
+CommunityMember.create!(user: jean, community: dan_community)
+
+# Add messages to Daniel's community
+12.times do
+  Message.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    user: [daniel, jean, annema].sample,
+    community: dan_community)
+end
+
+# Add community request for Daniel to Luis's community
+CommunityRequest.create!(user: daniel, community: luis_community)
+
+#Create 12 entries for Daniel
+12.times do
   Entry.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    user: user,
+    user: daniel,
     mood: rand(1..6))
 end
