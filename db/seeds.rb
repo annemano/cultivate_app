@@ -79,8 +79,8 @@ jean = User.create!(email: "jean@jean.com", password: "123456")
 # Create Daniel's and Luis's communities
 dan_community = Community.create!(name: 'Gratitude Safe Space')
 CommunityMember.create!(user: daniel, community: dan_community, owner: true)
-luis_community = Community.create!(name: 'Luis & Daniel')
-CommunityMember.create!(user: luis, community: luis_community, owner: true)
+# luis_community = Community.create!(name: 'Luis & Daniel')
+# CommunityMember.create!(user: luis, community: luis_community, owner: true)
 
 # Add Anne-Marie and Jean to Daniel's community
 CommunityMember.create!(user: annema, community: dan_community)
@@ -116,8 +116,8 @@ Message.create!(content: 'Thanks for thinking of this Jean, I was stuck but I’
     user: daniel,
     community: dan_community)
 
-# Add community request for Daniel to Luis's community
-CommunityRequest.create!(user: daniel, community: luis_community)
+# # Add community request for Daniel to Luis's community
+# CommunityRequest.create!(user: daniel, community: luis_community)
 
 #Create 10 entries for Daniel
 
