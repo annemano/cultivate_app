@@ -16,6 +16,7 @@ Now that we have graduated the bootcamp, I'd like to make the following improvem
 - Implement pundit to manage authorizations across the app, especially in the communities
 - Improve the search option when creating a new Community
 - Possibility to filter posts
+- Edit the profile settings page so that the user can select their own nickname
 
 
 (Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.)
